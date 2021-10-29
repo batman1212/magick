@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard21;netstandard20;net20</TargetFrameworks>
+    <Platforms>AnyCPU</Platforms>
+    <AssemblyVersion>8.3.0</AssemblyVersion>
+    <FileVersion>8.3.3</FileVersion>
+    <Version>8.3.3</Version>
+    <Configurations>Debug;Test;Release</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.354" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="../Shared/Bytes.cs" Link="Helpers/Bytes.cs" />
+    <Compile Include="../Shared/EnumHelper.cs" Link="Helpers/EnumHelper.cs" />
+    <Compile Include="../Shared/FileHelper.cs" Link="Helpers/FileHelper.cs" />
+    <Compile Include="../Shared/MemberNotNullAttribute.cs" Link="Helpers/MemberNotNullAttribute.cs" />
+    <Compile Include="../Shared/NotNullAttribute.cs" Link="Helpers/NotNullAttribute.cs" />
+    <Compile Include="../Shared/Throw.cs" Link="Helpers/Throw.cs" />
+    <Compile Include="../Shared/TypeHelper.cs" Link="Helpers/TypeHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources/**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources/ColorProfiles/CMYK/CoatedFOGRA39.icc">
+      <LogicalName>ImageMagick.Resources.ColorProfiles.CMYK.CoatedFOGRA39.icc</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources/ColorProfiles/CMYK/USWebCoatedSWOP.icc">
+      <LogicalName>ImageMagick.Resources.ColorProfiles.CMYK.USWebCoatedSWOP.icc</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources/ColorProfiles/RGB/AdobeRGB1998.icc">
+      <LogicalName>ImageMagick.Resources.ColorProfiles.RGB.AdobeRGB1998.icc</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources/ColorProfiles/RGB/AppleRGB.icc">
+      <LogicalName>ImageMagick.Resources.ColorProfiles.RGB.AppleRGB.icc</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources/ColorProfiles/RGB/ColorMatchRGB.icc">
+      <LogicalName>ImageMagick.Resources.ColorProfiles.RGB.ColorMatchRGB.icc</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources/ColorProfiles/RGB/SRGB.icm">
+      <LogicalName>ImageMagick.Resources.ColorProfiles.RGB.SRGB.icm</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <Import Project="../Magick.NET.props" />
+</Project>

@@ -1,0 +1,16 @@
+﻿{
+  "dynamic": "ManagedToNative",
+  "interface": true,
+  "constructor": {
+    "arguments": [
+      {
+        "name": "values",
+        "type": "double[]"
+      },
+      {
+        "name": "order",
+        "type": "size_t"
+      }
+    ]
+  }
+}
